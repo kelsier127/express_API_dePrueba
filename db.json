@@ -1,0 +1,40 @@
+{
+    "books": [
+        {
+            "id": 1,
+            "name": "Los 7 hábitos de la gente altamente efectiva",
+            "author": "Stephen R. Covey",
+            "year": 1989
+        },
+        {
+            "id": 2,
+            "name": "Padre rico, padre pobre",
+            "author": "Robert Kiyosaki",
+            "year": 1997
+        },
+        {
+            "id": 3,
+            "name": "El Imperio del Vampiro",
+            "author": "Jay Kristoff",
+            "year": 2022
+        },
+        {
+            "id": 4,
+            "name": "El Archivo de las Tormentas: Viento y Verdad",
+            "author": "Brandon Sanderson",
+            "year": 2024
+        },
+        {
+            "id": 5,
+            "name": "Los cantos de Hyperion",
+            "author": "Dan Simmons",
+            "year": 1989
+        },
+        {
+            "id": 6,
+            "name": "Cancion de Hielo y Fuego: Juego de tronos",
+            "author": "George R. R. Martin",
+            "year": 1996
+        }
+    ]
+}
