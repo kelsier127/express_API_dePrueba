@@ -1,3 +1,35 @@
 GET HTTP://LOCALHOST:3000/
 
+###
+
 GET HTTP://LOCALHOST:3000/BOOKS
+
+###
+
+GET HTTP://LOCALHOST:3000/BOOKS/:id
+
+###
+
+POST HTTP://LOCALHOST:3000/BOOKS HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "El nombre del viento",
+    "author": "Patrick Rothfuss",
+    "year": 2007
+}
+
+###
+
+PUT HTTP://LOCALHOST:3000/BOOKS/7 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "El nombre del viento (editado)",
+    "author": "Patrick Rothfuss",
+    "year": 2007
+}
+
+###
+
+DELETE HTTP://LOCALHOST:3000/BOOKS/8

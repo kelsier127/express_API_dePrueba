@@ -21,8 +21,14 @@ const readData = () => {
         console.log(err);
     }
 }
-readData();
 
+const writeData = (data) => {
+    try {
+        fs.writeFileSync('./db.json', JSON.stringify(data));
+    }catch(err){
+        console.log(err);
+    }
+}
 // Iniciar servidor
 app.listen(port, () => {
   console.log(`Servidor escuchando al puerto: ${port}`);
@@ -47,3 +53,53 @@ app.get('/books/:id', (req, res) => {
     
     res.send(libro);
 })
+
+app.post('/books', (req, res) => {
+    const data = readData();
+    const body = req.body;
+    const newBook = {
+        id:data.books.length + 1,
+        ...body 
+
+    }
+
+    data.books.push(newBook);
+
+    writeData(data);
+    res.json(newBook);
+})
+
+app.put('/books/:id', (req, res) => {
+    const data = readData();
+    const body = req.body;
+
+    const id = parseInt(req.params.id);
+
+    const index = data.books.findIndex(libro =>  libro.id === id );
+
+    data.books[index] = {
+        ...data.books[index],
+        ...body
+        
+    };
+
+    writeData(data);
+    res.json({
+        message:"Actualitzacio correcta",
+    });
+})
+
+app.delete('/books/:id', (req, res) => {
+    const data = readData();
+    const id = parseInt(req.params.id);
+
+    const index = data.books.findIndex(libro =>  libro.id === id );
+
+    data.books.splice(index,1);
+
+    writeData(data);
+
+    res.json({
+        message:"Eliminacio correcta",
+    });
+}   )
